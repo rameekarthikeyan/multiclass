@@ -53,8 +53,5 @@ for (i in 1:dim(Y)[1]) {
 g <- as.data.table(g)
 predictedclass <- g[, lapply(.SD, which.max)]
 
-# predictedprob <- softmax((crossprod(t(theta),Xtest)) + matrix(rep(b, dim(X)[2]), nrow = dim(Y)[1], ncol = dim(Xtest)[2]))
-# predictedclass <- (as.data.table(predictedprob))[, lapply(.SD, which.max)]
-# predictedclass <- transpose(predictedclass)
 return(list(h,g,predictedclass))
 }
