@@ -1,5 +1,5 @@
 MultiClassLogistic <- function(X, Y,learning_rate = 0.005, numiterations = 10000, Xtest) {
-#### Applying Logistic regression first
+
 #### Defining Sigmoid function
 sigm <- function(z) {
     1/(1+ exp(-z))
@@ -46,8 +46,7 @@ g <- NULL
 for (i in 1:dim(Y)[1]) {
   h[[i]] <- run_logistic(matrix(Y[i,], nrow = 1))
   print("Next classifier....")
-  # print(head(h[[i]]))
-  # print(h[[i]][3])
+  
   g <- rbind(g, h[[i]][3][[1]])
 }
 g <- as.data.table(g)
